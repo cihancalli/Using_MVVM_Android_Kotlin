@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView_a"
+        android:id="@+id/textView_result"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -38,7 +38,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_a" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_result" />
 
     <EditText
         android:id="@+id/editText_sayi_2"

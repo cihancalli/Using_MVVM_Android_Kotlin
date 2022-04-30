@@ -11,29 +11,30 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         design = DataBindingUtil.setContentView(this ,R.layout.activity_main)
-        design.textViewResult.text = "0"
+        design.mainActivityObject = this
 
-        design.buttonCollection.setOnClickListener {
-            val getNumber1 = design.editTextSayi1.text.toString()
-            val getNumber2 = design.editTextSayi2.text.toString()
+        ResultText(0.toString())
+    }
 
-            val number1 = getNumber1.toInt()
-            val number2 = getNumber2.toInt()
+    fun buttonCollectionTapped(getNumber1:String,getNumber2:String)
+    {
+        val number1 = getNumber1.toInt()
+        val number2 = getNumber2.toInt()
 
-            val collect = number1 + number2
-            design.textViewResult.text = "${collect}"
-        }
+        val collect = number1 + number2
+        ResultText(collect.toString())
+    }
 
-        design.buttonMultiplication.setOnClickListener {
-            val getNumber1 = design.editTextSayi1.text.toString()
-            val getNumber2 = design.editTextSayi2.text.toString()
+    fun buttonMultiplicationTapped(getNumber1:String,getNumber2:String)
+    {
+        val number1 = getNumber1.toInt()
+        val number2 = getNumber2.toInt()
 
-            val number1 = getNumber1.toInt()
-            val number2 = getNumber2.toInt()
+        val multiple = number1 * number2
+        ResultText(multiple.toString())
+    }
 
-            val multiple = number1 * number2
-
-            design.textViewResult.text = "${multiple}"
-        }
+    fun ResultText(text:String){
+        design.textViewResult.text = "${text}"
     }
 }

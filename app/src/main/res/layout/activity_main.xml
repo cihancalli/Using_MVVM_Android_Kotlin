@@ -3,6 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="mainActivityObject" type="com.zerdasoftware.usingmvvm.MainActivity" />
+    </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -25,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText_sayi_1"
+        android:id="@+id/editTextSayi1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -43,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_result" />
 
     <EditText
-        android:id="@+id/editText_sayi_2"
+        android:id="@+id/editTextSayi2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -59,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_sayi_1" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSayi1" />
 
     <Button
         android:id="@+id/button_collection"
@@ -70,9 +76,10 @@
         android:layout_marginEnd="25dp"
         android:backgroundTint="#4CAF50"
         android:text="Toplama"
+        android:onClick="@{()-> mainActivityObject.buttonCollectionTapped(editTextSayi1.getText().toString(),editTextSayi2.getText().toString())}"
         app:layout_constraintEnd_toStartOf="@+id/button_multiplication"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_sayi_2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSayi2" />
 
     <Button
         android:id="@+id/button_multiplication"
@@ -83,8 +90,9 @@
         android:layout_marginEnd="50dp"
         android:backgroundTint="#E91E63"
         android:text="Çarpma"
+        android:onClick="@{()-> mainActivityObject.buttonMultiplicationTapped(editTextSayi1.getText().toString(),editTextSayi2.getText().toString())}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_collection"
-        app:layout_constraintTop_toBottomOf="@+id/editText_sayi_2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSayi2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

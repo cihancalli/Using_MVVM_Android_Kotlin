@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
             val number2 = getNumber2.toInt()
 
             val collect = number1 + number2
-
             design.textViewResult.text = "${collect}"
         }
 

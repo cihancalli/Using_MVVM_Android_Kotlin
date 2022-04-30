@@ -35,6 +35,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun ResultText(text:String){
-        design.textViewResult.text = "${text}"
+        design.calculationResult = "${text}"
     }
 }

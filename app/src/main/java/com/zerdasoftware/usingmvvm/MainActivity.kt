@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.zerdasoftware.usingmvvm.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var design:ActivityMainBinding
@@ -18,20 +17,30 @@ class MainActivity : AppCompatActivity() {
 
     fun buttonCollectionTapped(getNumber1:String,getNumber2:String)
     {
-        val number1 = getNumber1.toInt()
-        val number2 = getNumber2.toInt()
+        if(!getNumber1.equals("") && !getNumber2.equals("")){
 
-        val collect = number1 + number2
-        ResultText(collect.toString())
+            val number1 = getNumber1.toInt()
+            val number2 = getNumber2.toInt()
+
+            val collect = number1 + number2
+            ResultText(collect.toString())
+        }else{
+            ResultText("404")
+        }
     }
 
     fun buttonMultiplicationTapped(getNumber1:String,getNumber2:String)
     {
-        val number1 = getNumber1.toInt()
-        val number2 = getNumber2.toInt()
+        if(!getNumber1.equals("") && !getNumber2.equals("")){
 
-        val multiple = number1 * number2
-        ResultText(multiple.toString())
+            val number1 = getNumber1.toInt()
+            val number2 = getNumber2.toInt()
+
+            val multiple = number1 * number2
+            ResultText(multiple.toString())
+        }else{
+            ResultText("404")
+        }
     }
 
     fun ResultText(text:String){

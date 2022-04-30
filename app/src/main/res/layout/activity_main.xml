@@ -5,10 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="mainActivityObject" type="com.zerdasoftware.usingmvvm.MainActivity" />
-        <variable
-            name="calculationResult" type="String" />
+        <variable name="mainActivityObject" type="com.zerdasoftware.usingmvvm.MainActivity" />
+        <variable name="calculationResult" type="String" />
+        <import type="android.view.View"/>
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,7 +24,8 @@
         android:layout_marginEnd="50dp"
         android:gravity="center"
         android:text="@{calculationResult}"
-        android:textColor="@color/black"
+        android:textColor="@{Integer.parseInt(calculationResult) > 10 ? @color/purple_700 : @color/black}"
+        android:visibility="@{Integer.parseInt(calculationResult) == 404 ? View.INVISIBLE : View.VISIBLE}"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
